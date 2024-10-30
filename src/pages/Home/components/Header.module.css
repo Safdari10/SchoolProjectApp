@@ -6,5 +6,63 @@
 
 .homeHeader {
     display: grid;
-    
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: #41BAEF;
+    height: 5rem;
+    width: 100%;
+    margin: 0 auto;
+    justify-items: center; 
+    align-items: center; 
+    font-family: Open Sans;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    border: 1px solid #41BAEF;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.logo {
+    width: 17rem;
+    height: 5rem;
+    cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+    gap: 5rem;
+    cursor: pointer;
+}
+
+.statusbar {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+
+.lang {
+ margin-left: 3rem;
+ display: flex;
+ gap: 5px;
+}
+
+.flag {
+    width: 15px;
+    height: 15px;
+}
+
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.icon {
+    width: 2rem;
+    height: 1.8rem;
 }
