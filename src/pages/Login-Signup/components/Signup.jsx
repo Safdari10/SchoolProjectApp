@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../LoginSingup.module.css";
+import styles from "../LoginSignup.module.css";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -25,7 +25,7 @@ const Signup = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <input
         className={styles.input}
         type="text"
@@ -58,7 +58,7 @@ const Signup = () => {
         onChange={(e) => setConfirmPassword(e.target.value)}
         placeholder="Confirm Password"
         required/>
-        <button type="submit" className={styles.submit}>Sign up</button>
+        <button type="submit" className={styles.submit}>SIGN UP</button>
     </form>
   );
 };

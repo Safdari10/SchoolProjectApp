@@ -1,0 +1,96 @@
+.loginSignup {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 5.6rem max-content 1fr;
+    height: 100vh;
+    justify-items: center;
+    align-items: center;
+}
+
+.student, .teacher {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-row: 2;
+    margin: 0 auto;
+    height: fit-content;
+}
+
+.student {
+    grid-column: 2;
+}
+
+.teacher {
+    grid-column: 3; 
+}
+
+.background {
+    width: 30rem;
+    height: 30rem;
+}
+
+.title {
+    font-family: 'Nunito', sans-serif; 
+    font-size: 4.2rem;
+    color: #707070;
+}
+
+.showOptionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 3rem;
+}
+
+.showOption {
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: bold;
+    color: #707070;
+    font-size: 2.4rem;
+}
+
+
+.active {
+    border-bottom: 5px solid #F91C85;
+    color: #A5A5A5;
+
+}
+
+
+/* login and sign up component styles */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    height: 20rem;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 18rem;
+    height: 2.5rem;
+    border: .1rem solid #A5A5A5;
+}
+
+
+.submit {
+    background-color: #F91C85;
+    border: 1px solid #F91C85;
+    border-radius: 3%;
+    box-shadow: 1px 1px 1px 1px rgb(240, 237, 237);
+    font-family: 'Nunito';
+    font-weight: bold;
+    color: white;
+    font-size: 2rem;
+    width: 12rem;
+    padding: .1rem;
+    cursor: pointer;
+}

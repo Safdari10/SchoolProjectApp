@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   return (
-    <form className={styles.login} action="#" onSubmit={handleSubmit}>
+    <form className={styles.form} action="#" onSubmit={handleSubmit}>
       <input
         type="email"
         name="email"
