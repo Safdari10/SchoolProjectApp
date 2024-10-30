@@ -1,10 +1,10 @@
+import { Outlet } from 'react-router-dom'
 import './styles/global.css'
-import Home from './pages/Home/Home'
 
 const App = () => {
   return (
     <div>
-      <Home/>
+<Outlet/>
     </div>
   )
 }
