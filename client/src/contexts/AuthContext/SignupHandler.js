@@ -1,22 +1,17 @@
 
 
-const SignupHandler = async(username, password, userRole) => {
+const SignupHandler = async(name, email, password, userRole) => {
   
-  let apiUrl;
+  let apiUrl = "/api/signup"
 
-  if(userRole === 'student') {
-    apiUrl = '/api/students/signup'
-  } else if (userRole === "teacher") {
-    apiUrl = '/api/teacher/signup'
-  }
 
   try {
 const response = await fetch (apiUrl, {
-  method: 'Post',
+  method: 'POST',
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify({username, password })
+  body: JSON.stringify({name, email, password, userRole })
 })
 
 if(!response.ok) {

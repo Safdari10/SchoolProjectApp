@@ -2,13 +2,7 @@
 
 const LoginHandler = async(username, password, userRole) => {
 
-    let apiUrl;
-
-if(userRole === "student"){
-    apiUrl = "/api/student/login"
-} else if (userRole === "teacher") {
-    apiUrl = "/api/teacher/login"
-}
+    let apiUrl = "/api/login"
 
 try {
     const response = await fetch(apiUrl, {
@@ -16,7 +10,7 @@ try {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, password, userRole }),
     });
 
     if(!response.ok) {
