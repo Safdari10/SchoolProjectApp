@@ -1,26 +1,35 @@
 import { useState } from "react";
 import styles from "../LoginSignup.module.css";
+import { useAuth } from "../../../contexts/AuthContext/AuthContext";
 
-const Signup = () => {
+const Signup = ({ userRole }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [errorMessage, setErrorMessage] = useState("")
- 
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const { signup } = useAuth();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage("");
 
-   if (password !== confirmPassword) {
-    set
-   }
+    if (password !== confirmPassword) {
+      set;
+    }
 
-    // api call
-
-    if (Response.ok) {
+    const success = await signup(name, email, password, userRole);
+    if (success) {
+      // clear all fields on success
+      setName('')
+      setEmail('')
+      setPassword('')
+      setConfirmPassword('')
       alert(
         `successfully signed up, you can login with your email and password`
       );
+    } else {
+      setErrorMessage("Signup Failed, Please check your credentials.");
     }
   };
 
@@ -33,7 +42,8 @@ const Signup = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Full Name"
-        required/>
+        required
+      />
       <input
         className={styles.input}
         type="email"
@@ -41,7 +51,8 @@ const Signup = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email Address"
-        required/>
+        required
+      />
       <input
         className={styles.input}
         type="password"
@@ -49,7 +60,8 @@ const Signup = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
-        required/>
+        required
+      />
       <input
         className={styles.input}
         type="password"
@@ -57,8 +69,12 @@ const Signup = () => {
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
         placeholder="Confirm Password"
-        required/>
-        <button type="submit" className={styles.submit}>SIGN UP</button>
+        required
+      />
+      {errorMessage && <div className={styles.error}>{errorMessage}</div>}
+      <button type="submit" className={styles.submit}>
+        SIGN UP
+      </button>
     </form>
   );
 };

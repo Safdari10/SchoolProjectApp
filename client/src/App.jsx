@@ -1,12 +1,13 @@
-import { Outlet } from 'react-router-dom'
-import './styles/global.css'
+import { Outlet } from "react-router-dom";
+import "./styles/global.css";
+import { AuthProvider } from "./contexts/AuthContext/AuthContext";
 
 const App = () => {
   return (
-    <div>
-<Outlet/>
-    </div>
-  )
-}
+    <AuthProvider>
+      <Outlet />
+    </AuthProvider>
+  );
+};
 
-export default App
+export default App;

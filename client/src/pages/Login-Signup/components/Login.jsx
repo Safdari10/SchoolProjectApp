@@ -1,20 +1,25 @@
 import { useState } from "react";
 import styles from "../LoginSignup.module.css";
+import { useAuth } from "../../../contexts/AuthContext/AuthContext"
 import { useNavigate } from 'react-router-dom'
 
 
-const Login = () => {
+const Login = ({ userRole }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
+    const [errorMessage, setErrorMessage] = useState('')
+    const {login} = useAuth()
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // api call logi
+    setErrorMessage('')
+    const success = await login(email, password, userRole)
 
-    if(Response.ok) {
+    if(success) {
         navigate('/#')
+    } else {
+      setErrorMessage('Login failed. Please check your credentials.')
     }
   };
 
@@ -38,6 +43,7 @@ const Login = () => {
       placeholder="Password"
       required
       />
+      {errorMessage && <div className={styles.error}>{errorMessage}</div>}
       <button type="submit" className={styles.submit}>
         LOG IN
       </button>
