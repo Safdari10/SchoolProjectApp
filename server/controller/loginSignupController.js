@@ -6,20 +6,15 @@ const getUser = async (req, res) => {
 
         // Validate incoming data
         if (!email || !password) {
-            return res.status(400).send("Email and password are required.");
+            return res.status(400).json({ message: "Email and password are required."});
         }
 
-        // Check if userRole is provided
+        // Check if userRole is coming through from front end
         if (!userRole) {
-            return res.status(400).send('User role is required for login.');
+            return res.status(400).json({message: 'userRole not recieved, login failed'});
         }
 
         const user = await loginQuery(email, password, userRole);
-
-        // Check if user exists
-        if (!user) {
-            return res.status(404).send('Login details not found.');
-        }
 
         // Omit the password before sending the response
         const { password: _, ...userWithoutPassword } = user;
@@ -28,7 +23,10 @@ const getUser = async (req, res) => {
 
     } catch (error) {
         console.error("Error fetching login details", error);
-        res.status(500).send("An error occurred while retrieving login details. Please try again later.");
+        if(error.message === "Invalid credentials") {
+            return res.status(401).json({message: "Invalid credentials"})
+        }
+        res.status(500).json({ message: "An error occurred while retrieving login details. Please try again later."});
     }
 };
 
@@ -38,12 +36,12 @@ const createUser = async (req, res) => {
 
         // Validate incoming data
         if (!name || !email || !password) {
-            return res.status(400).send("Name, email, and password are required.");
+            return res.status(400).json({ message: "Name, email, and password are required."});
         }
 
         // Check if userRole is recieved
         if (!userRole) {
-            return res.status(400).send('User role not recieved, signup failed.');
+            return res.status(400).json({ message: 'User role not recieved, signup failed.'});
         }
 
         // Create user
@@ -52,7 +50,7 @@ const createUser = async (req, res) => {
 
     } catch (error) {
         console.error("Error creating user account", error);
-        res.status(500).send("An error occurred while creating user account. Please try again later.");
+        res.status(500).json({message: "An error occurred while creating user account. Please try again later."});
     }
 };
 

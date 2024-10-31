@@ -22,9 +22,11 @@ const SignupHandler = async (name, email, password, userRole) => {
     }
 
    // If the response is okay, parse and return it
-   return await response.json();
+  const result = await response.json();
+  return result.message
+  
   } catch (error) {
-    console.error(`Login Error`, error);
+    console.error(`Login Error ${apiUrl}`, error);
     throw error;
   }
 };

@@ -4,14 +4,17 @@ const { hashPassword, comparePassword } = require ('../services/authService')
 const loginQuery = async (email, password, userRole) => {
     const table = userRole === 'student' ? 'student' : 'teacher'
     const sql = `SELECT * FROM ${table} WHERE email = ? `
-    const [user] = await query(sql, [email])
 
-    if(user.length === 0) {
-        throw new Error("Login not found")
+    // execute the query
+    const user = await query(sql, [email])
+
+    // check if user is found
+    if(!user || user.length === 0) {
+        throw new Error("Invalid credentials")
     }
 
+    // validate password
     const isPasswordValid = await comparePassword(password, user[0].password)
-
     if(!isPasswordValid) {
         throw new Error("Invalid credentials")
     }

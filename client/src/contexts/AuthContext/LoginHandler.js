@@ -24,7 +24,7 @@ const LoginHandler = async (email, password, userRole) => {
 // If the response is okay, parse and return it
     return await response.json();
   } catch (error) {
-    console.error(`Login Error`, error);
+    console.error(`Login Error ${apiUrl}`, error);
     throw error;
   }
 };

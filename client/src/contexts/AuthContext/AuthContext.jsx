@@ -6,7 +6,6 @@ import login from './LoginHandler'
 
 export const AuthProvider = ({ children }) => {
 const [user, setUser] = useState(null)
-const [error, setError] = useState('')
 
 
 
@@ -15,7 +14,7 @@ const logout = () => {
 }
 
   return (
-    <AuthContext.Provider value={{user, signup, login, logout, error}}>
+    <AuthContext.Provider value={{user, signup, login, logout }}>
       {children}
     </AuthContext.Provider>
   )

@@ -21,16 +21,14 @@ const Signup = ({ userRole }) => {
     }
 
     try {
-      await signup(name, email, password, userRole);
+      const successMessage = await signup(name, email, password, userRole);
       setName("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-      alert(
-        `Successfully signed up, you can login with your email and password.`
-      );
-    } catch (error) {
-      setErrorMessage(error.message);
+      alert(successMessage);
+    }catch (error) {
+   setErrorMessage(error.message)
     }
   };
 
