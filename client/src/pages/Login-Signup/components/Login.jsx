@@ -16,7 +16,7 @@ const Login = ({ userRole }) => {
 
         try {
           await login(email, password, userRole);
-          navigate('/');
+          navigate('/student-dashboard');
         } catch (error) {
           setErrorMessage(error.message); 
         }

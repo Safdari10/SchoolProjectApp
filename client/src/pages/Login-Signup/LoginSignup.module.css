@@ -2,9 +2,16 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 5.6rem max-content 1fr;
-    height: 100vh;
     justify-items: center;
     align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .student, .teacher {
@@ -13,17 +20,35 @@
     justify-content: center;
     align-items: center;
     grid-row: 2;
-    margin: 0 auto;
     height: fit-content;
+    background-color: white;
+    border: 1px solid #707070;
 }
 
 .student {
+    padding-right: 5rem;
+    padding-left: 1rem;
     grid-column: 2;
 }
 
 .teacher {
+    padding-left: 5rem;
+    padding-right: 1rem;
     grid-column: 3; 
+ 
 }
+
+.close {
+    font-size: 4rem;
+    align-self: flex-end;
+    margin-right: 2rem;
+    color: #707070;
+    font-family: "Open sans";
+    font-weight: 700;
+    height: 2rem;
+    margin-bottom:  2rem;
+}
+
 
 .background {
     width: 30rem;
@@ -93,4 +118,5 @@
     width: 12rem;
     padding: .1rem;
     cursor: pointer;
+    margin-bottom: 2rem;
 }

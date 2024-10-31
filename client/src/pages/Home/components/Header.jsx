@@ -3,9 +3,8 @@ import nzFlag from "../../../assets/LanguageButtonFlags/Flag_of_New_Zealand.svg.
 import maoriFlag from "../../../assets/LanguageButtonFlags/Tino_Rangatiratanga_Maori_sovereignty_movement_flag.svg";
 import profile from "../../../assets/profile.png";
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
 
-const header = () => {
+const header = ({ onClick }) => {
   return (
     <div className={styles.homeHeader}>
       <img className={styles.logo} src={logo} alt="logo" />
@@ -28,7 +27,7 @@ const header = () => {
         </div>
         <div className={styles.status}>
           <img src={profile} alt="profileIcon" className={styles.icon}/>
-          <div className={styles.loginSignup}><Link to={'/login'} >REGISTER | LOGIN</Link></div>
+          <div className={styles.loginSignup} onClick={onClick}>REGISTER | LOGIN</div>
         </div>
       </div>
     </div>

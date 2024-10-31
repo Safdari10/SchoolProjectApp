@@ -5,7 +5,7 @@ import styles from "./LoginSignup.module.css";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 
-const LoginSignup = () => {
+const LoginSignup = ({ onClose }) => {
   // Separate login state for students and teachers
   const [isStudentLogin, setIsStudentLogin] = useState(true);
   const [isTeacherLogin, setIsTeacherLogin] = useState(true);
@@ -23,6 +23,7 @@ const LoginSignup = () => {
   return (
     <div className={styles.loginSignup}>
       <div className={styles.student}>
+        <a className={styles.close}/>
         <img src={studentBackground} className={styles.background} alt="Student" />
         <h1 className={styles.title}>Students</h1>
         <div className={styles.showOptionContainer}>
@@ -44,6 +45,7 @@ const LoginSignup = () => {
         )}
       </div>
       <div className={styles.teacher}>
+         <a className={styles.close} onClick={onClose} >X</a>
         <img src={teacherBackground} className={styles.background} alt="Teacher" />
         <h1 className={styles.title}>Teachers</h1>
         <div className={styles.showOptionContainer}>
