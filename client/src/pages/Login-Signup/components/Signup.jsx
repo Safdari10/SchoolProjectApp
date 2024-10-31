@@ -26,7 +26,7 @@ const Signup = ({ userRole }) => {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-      alert(successMessage);
+      setErrorMessage(successMessage);
     }catch (error) {
    setErrorMessage(error.message)
     }
