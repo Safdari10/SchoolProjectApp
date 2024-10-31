@@ -41,14 +41,14 @@ const createUser = async (req, res) => {
             return res.status(400).send("Name, email, and password are required.");
         }
 
-        // Check if userRole is provided
+        // Check if userRole is recieved
         if (!userRole) {
-            return res.status(400).send('User role is required for registration.');
+            return res.status(400).send('User role not recieved, signup failed.');
         }
 
         // Create user
-        const user = await signupQuery(name, email, password, userRole);
-        res.status(201).json(user);
+        const result = await signupQuery(name, email, password, userRole);
+        res.status(201).json(result);
 
     } catch (error) {
         console.error("Error creating user account", error);

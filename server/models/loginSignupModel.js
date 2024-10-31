@@ -21,12 +21,20 @@ const loginQuery = async (email, password, userRole) => {
 
 
 const signupQuery = async (name, email, password, userRole) => {
-    const table = userRole === "student" ? "student" : "teacher"
-    const hashedPassword = await hashPassword(password)
-    const sql = `INSERT INTO ${table}(name, email, password) value (?, ?, ?)`;
-    const [user] = await query(sql, [name, email, hashedPassword])
-   return user[0]
-}
+  const table = userRole === "student" ? "student" : "teacher";
+  const hashedPassword = await hashPassword(password);
+
+  // insert the user into the database
+  const sql = `INSERT INTO ${table}(name, email, password) value (?, ?, ?)`;
+  const result = await query(sql, [name, email, hashedPassword]);
+
+  // check if the insertion was successful
+  if (result.affectedRows === 0) {
+    throw new Error("Failed to create account");
+  }
+
+  return { message: "Account successfully created" };
+};
 
 
 module.exports = {
