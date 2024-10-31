@@ -1,7 +1,8 @@
-import { createContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
+import signup from './SignupHandler'
+import login from './LoginHandler'
 
-
-const AuthContext = createContext()
+ export const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
 const [user, setUser] = useState(null)
@@ -20,4 +21,7 @@ const logout = () => {
   )
 }
 
-export default AuthContext
+export const useAuth = () => {
+   return useContext(AuthContext)
+}
+
