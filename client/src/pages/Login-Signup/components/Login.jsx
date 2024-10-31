@@ -7,20 +7,25 @@ const Login = ({ userRole }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [loading, setLoading] = useState(false); 
     const { login } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setErrorMessage(''); 
+        setErrorMessage('');
+        setLoading(true); // Start loading
 
         try {
-          await login(email, password, userRole);
-          navigate('/student-dashboard');
+            await login(email, password, userRole);
+            // Navigate based on userRole
+            const redirectPath = userRole === 'student' ? '/student-dashboard' : '/teacher-dashboard';
+            navigate(redirectPath);
         } catch (error) {
-          setErrorMessage(error.message); 
+            setErrorMessage(error.message); 
+        } finally {
+            setLoading(false); 
         }
-       
     };
 
     return (
@@ -33,6 +38,7 @@ const Login = ({ userRole }) => {
                 className={styles.input}
                 placeholder="Email Address"
                 required
+                aria-label="Email Address"
             />
             <input 
                 type="password" 
@@ -42,10 +48,11 @@ const Login = ({ userRole }) => {
                 className={styles.input} 
                 placeholder="Password"
                 required
+                aria-label="Password"
             />
             {errorMessage && <div className={styles.error}>{errorMessage}</div>}
-            <button type="submit" className={styles.submit}>
-                LOG IN
+            <button type="submit" className={styles.submit} disabled={loading}>
+                {loading ? 'Logging In...' : 'LOG IN'} 
             </button>
         </form>
     );
