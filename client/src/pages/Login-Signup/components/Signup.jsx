@@ -14,22 +14,23 @@ const Signup = ({ userRole }) => {
     e.preventDefault();
     setErrorMessage("");
 
+    // Check if passwords match
     if (password !== confirmPassword) {
-      setErrorMessage("Passwords do not match.")
+      setErrorMessage("Passwords do not match.");
+      return;
     }
 
-    const success = await signup(name, email, password, userRole);
-    if (success) {
-      // clear all fields on success
-      setName('')
-      setEmail('')
-      setPassword('')
-      setConfirmPassword('')
+    try {
+      await signup(name, email, password, userRole);
+      setName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
       alert(
-        `successfully signed up, you can login with your email and password`
+        `Successfully signed up, you can login with your email and password.`
       );
-    } else {
-      setErrorMessage("Signup Failed, Please check your credentials.");
+    } catch (error) {
+      setErrorMessage(error.message);
     }
   };
 
