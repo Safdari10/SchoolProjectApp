@@ -15,7 +15,7 @@ const Signup = ({ userRole }) => {
     setErrorMessage("");
 
     if (password !== confirmPassword) {
-      set;
+      setErrorMessage("Passwords do not match.")
     }
 
     const success = await signup(name, email, password, userRole);

@@ -15,10 +15,15 @@ const response = await fetch (apiUrl, {
 })
 
 if(!response.ok) {
-  const { message } = await response.json();
-  throw new Error(message || `Sign up Failed.`)
+  let errorMessage = "Signup Failed"
+try {
+  const errorResponse = await response.json();
+  errorMessage = errorResponse.message || errorMessage
+} catch (parseError) {
+  
 }
-
+  throw new Error(errorMessage)
+}
 
 return await response.json();
   } catch (error) {
