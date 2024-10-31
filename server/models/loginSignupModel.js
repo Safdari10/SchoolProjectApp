@@ -4,16 +4,25 @@ const loginQuery = async (email, userRole) => {
     const table = userRole === 'student' ? 'student' : 'teacher';
     const sql = `SELECT * FROM ${table} WHERE email = ?`;
 
-    // Execute the query to find the user by email
-    const user = await query(sql, [email]);
+    try {
+        // Execute the query to find the user by email
+        const user = await query(sql, [email]);
 
-    // Check if user is found
-    if (!user || user.length === 0) {
-        throw new Error("Invalid credentials");
+        // Check if user is found
+        if (!user || user.length === 0) {
+            throw new Error("User not found with the provided email.");
+        }
+
+        return {
+                id: userRole === "student" ? user[0].student_id : user[0].teacher_id,
+            ...user[0] 
+        }
+    } catch (error) {
+        console.error("Error in loginQuery:", error);
+        throw error; 
     }
-
-    return user[0];
 };
+
 
 const signupQuery = async (name, email, hashedPassword, userRole) => {
     const table = userRole === "student" ? "student" : "teacher";

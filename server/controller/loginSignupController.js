@@ -11,20 +11,19 @@ const loginUser = async (req, res) => {
 
     // Validate incoming data
     if (!email || !password) {
-      return res
-        .status(400)
-        .json({ message: "Email and password are required." });
+      return res.status(400).json({ message: "Email and password are required." });
     }
 
-    // Check if userRole is coming through from front end
+    // Check if userRole is coming through from the frontend
     if (!userRole) {
-      return res
-        .status(400)
-        .json({ message: "userRole not recieved, login failed" });
+      return res.status(400).json({ message: "userRole not received, login failed" });
     }
 
-    // retrieve user data from the database
+    // Retrieve user data from the database
     const user = await loginQuery(email, password, userRole);
+    if (!user) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
 
     // Validate password
     const isPasswordValid = await comparePassword(password, user.password);
@@ -32,27 +31,21 @@ const loginUser = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-   // Create JWT token
-  const token = createToken(user.id)
-
+    // Create JWT token
+    const token = createToken(user.id);
 
     // Omit the password before sending the response
     const { password: _, ...userWithoutPassword } = user;
 
-    return res.status(200).json({...userWithoutPassword, token});
+    return res.status(200).json({ ...userWithoutPassword, token });
   } catch (error) {
     console.error("Error fetching login details", error);
-    if (error.message === "Invalid credentials") {
-      return res.status(401).json({ message: "Invalid credentials" });
-    }
-    res
-      .status(500)
-      .json({
-        message:
-          "An error occurred while retrieving login details. Please try again later.",
-      });
+    return res.status(500).json({
+      message: "An error occurred while retrieving login details. Please try again later.",
+    });
   }
 };
+
 
 const createUser = async (req, res) => {
   try {
@@ -75,9 +68,8 @@ const createUser = async (req, res) => {
 // Hash Password before storing it
 const hashedPassword = await hashPassword(password)
 
-
     // Create user in the database
-    const result = await signupQuery(name, email, password, userRole);
+    const result = await signupQuery(name, email, hashedPassword, userRole);
     res.status(201).json(result);
 
   } catch (error) {

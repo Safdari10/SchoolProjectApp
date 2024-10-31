@@ -14,7 +14,7 @@ const Login = ({ userRole }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrorMessage('');
-        setLoading(true); // Start loading
+        setLoading(true); 
 
         try {
             await login(email, password, userRole);

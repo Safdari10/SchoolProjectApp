@@ -1,5 +1,5 @@
 const SignupHandler = async (name, email, password, userRole) => {
-  let apiUrl = "http://localhost:4500/api/signup";
+  const apiUrl = "http://localhost:4500/api/signup";
 
   try {
     const response = await fetch(apiUrl, {
