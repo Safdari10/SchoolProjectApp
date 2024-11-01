@@ -11,12 +11,16 @@ const loginUser = async (req, res) => {
 
     // Validate incoming data
     if (!email || !password) {
-      return res.status(400).json({ message: "Email and password are required." });
+      return res
+        .status(400)
+        .json({ message: "Email and password are required." });
     }
 
     // Check if userRole is coming through from the frontend
     if (!userRole) {
-      return res.status(400).json({ message: "userRole not received, login failed" });
+      return res
+        .status(400)
+        .json({ message: "userRole not received, login failed" });
     }
 
     // Retrieve user data from the database
@@ -41,11 +45,11 @@ const loginUser = async (req, res) => {
   } catch (error) {
     console.error("Error fetching login details", error);
     return res.status(500).json({
-      message: "An error occurred while retrieving login details. Please try again later.",
+      message:
+        "An error occurred while retrieving login details. Please try again later.",
     });
   }
 };
-
 
 const createUser = async (req, res) => {
   try {
@@ -65,21 +69,18 @@ const createUser = async (req, res) => {
         .json({ message: "User role not recieved, signup failed." });
     }
 
-// Hash Password before storing it
-const hashedPassword = await hashPassword(password)
+    // Hash Password before storing it
+    const hashedPassword = await hashPassword(password);
 
     // Create user in the database
     const result = await signupQuery(name, email, hashedPassword, userRole);
     res.status(201).json(result);
-
   } catch (error) {
     console.error("Error creating user account", error);
-    res
-      .status(500)
-      .json({
-        message:
-          "An error occurred while creating user account. Please try again later.",
-      });
+    res.status(500).json({
+      message:
+        "An error occurred while creating user account. Please try again later.",
+    });
   }
 };
 

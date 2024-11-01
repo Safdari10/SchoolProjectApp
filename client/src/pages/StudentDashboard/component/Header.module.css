@@ -1,0 +1,115 @@
+.studentHeader {
+  display: grid;
+  grid-template-columns: 24rem 35fr 35fr 6rem;
+  grid-row: 1;
+  height: 6.2rem;
+  justify-items: start;
+  align-items: end;
+  padding: 0 5rem;
+}
+
+.logo {
+  height: 6rem;
+  width: 14.6rem;
+}
+
+.titleCircleContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.title {
+  color: #6c6c6c;
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: "Nunito";
+}
+
+.introduction {
+  color: #6c6c6c;
+  font-family: "Open sans";
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.bigCircle {
+  background-color: #fdf7c0;
+  text-align: center;
+  font-family: "Nunito";
+  font-weight: 900;
+  color: #000;
+  font-size: 2.4rem;
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid #43c0f6;
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px #00000040;
+  opacity: 0.7;
+}
+
+.smallCircleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.smallCircle {
+  height: 1.7rem;
+  width: 1.7rem;
+  background: transparent;
+  border: 3px solid #43c0f6;
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px #00000040;
+}
+
+.btnContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  justify-items: end;
+  align-items: center;
+  margin-left: 8rem;
+  padding-bottom: 0.5rem;
+}
+
+.btnContainer > button {
+  font-family: "Nunito";
+  font-size: 1.6rem;
+  text-align: center;
+  letter-spacing: 0.32px;
+  color: #ffffff;
+  height: 3.5rem;
+  width: 20rem;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0px 4px 5px #00000029;
+}
+
+.startBtn {
+  background-color: #e5ab2c;
+}
+
+.helpBtn {
+  background-color: #f91c85;
+}
+
+.moreBtn {
+  background-color: #43c0f6;
+}
+
+.flagContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+
+.flag {
+  height: 1.2rem;
+  width: 2.4rem;
+}

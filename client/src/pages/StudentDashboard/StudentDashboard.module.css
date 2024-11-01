@@ -1,0 +1,36 @@
+
+.headerContainer {
+    height: 6.2rem;
+}
+
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95.6rem;
+    background-color: #B2E4FA;
+}
+
+.sidebarContainer {
+    flex: content;
+}
+
+.contentContainer {
+    flex: content;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6.2rem;
+    padding: auto;
+}
+
+.copyright {
+    color: #707070;
+    font-family: "Nunito";
+    font-weight: 1.6rem;
+    font-weight: bold;
+}
