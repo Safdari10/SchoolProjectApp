@@ -1,3 +1,7 @@
+import stylesSidebar from "./Sidebar.module.css";
+import stylesSidebarWide from "./SidebarWide.module.css";
+
+// icon imports
 import lbIcon from "../../../assets/StudentDashboard/learningObjectives.png";
 import lbActive from "../../../assets/StudentDashboard/learningObjectivesSelected.png";
 import InsIcon from "../../../assets/StudentDashboard/instructions.png";
@@ -11,7 +15,9 @@ import SubActive from "../../../assets/StudentDashboard/submitProjectSelected.pn
 import Bonus from "../../../assets/StudentDashboard/bonusChallenge.png";
 import Quiz from "../../../assets/StudentDashboard/takeTheQuiz.png";
 
-const NavItems = ({ activeLink, setActiveLink }) => {
+const NavItems = ({ activeLink, setActiveLink, isWideSidebar }) => {
+  const styles = isWideSidebar ? stylesSidebarWide : stylesSidebar;
+
   const navItems = [
     {
       name: "learning-Objective",
@@ -26,19 +32,19 @@ const NavItems = ({ activeLink, setActiveLink }) => {
       activeIcon: InsActive,
     },
     {
-      name: "video tutorial",
+      name: "video-tutorial",
       title: "VIDEO TUTORIAL",
       icon: VidIcon,
       activeIcon: VidActive,
     },
     {
-      name: "make project",
+      name: "make-project",
       title: "MAKE PROJECT",
       icon: MakIcon,
       activeIcon: MakActive,
     },
     {
-      name: "submit project",
+      name: "submit-project",
       title: "SUBMIT PROJECT",
       icon: SubIcon,
       activeIcon: SubActive,

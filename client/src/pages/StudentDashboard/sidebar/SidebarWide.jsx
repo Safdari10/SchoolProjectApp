@@ -1,13 +1,13 @@
+import styles from './SidebarWide.module.css'
 import profile_pic from "/images/students/RawiriFletcher.png";
-import NavItems from "./NavItems";
-import Arrow from '../../../assets/arrowLeft.png'
+import NavItems from './NavItems'
 import Profile from '../../../assets/profile.png'
 import Setting from '../../../assets/settings.png'
 import Logout from '../../../assets/logout.png'
 import {useNavigate} from "react"
 
 
-const SidebarWide = ({activeLink, setActiveLink}) => {
+const SidebarWide = ({activeLink, setActiveLink, isWideSidebar}) => {
  const navigate = useNavigate()
     const settingItem = [
         {name: "Profile", icon: Profile},
@@ -35,18 +35,18 @@ const SidebarWide = ({activeLink, setActiveLink}) => {
     <div>
       <div className={styles.navigation}>
         <img src={profile_pic} alt="profile photo" />
-        <NavItems activeLink={activeLink} setActiveLink={setActiveLink} />
+        <NavItems activeLink={activeLink} setActiveLink={setActiveLink} isWideSidebar={isWideSidebar} />
       </div>
-      <div className={styles.arrowContainer}>
-        <img src={Arrow} alt="sidebar slider"  className={styles.arrow}/>
-      </div>
+      
       <div className={styles.settingItemContainer}>
        <div className={styles.profileContainer}>
          {settingItem.map((item, index) => (
             <img 
             key={index}
+            src={item.icon}
+            alt={`${item.name} icon`}
             className={styles.settingIcon}
-            onClick={() => handleNavigate(path === item.name)}
+            onClick={() => handleNavigate(item.name)}
             />
          ))}
        </div>

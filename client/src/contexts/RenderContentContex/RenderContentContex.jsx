@@ -17,7 +17,7 @@ import ProjectSubmissions from '../../pages/TeacherDashboard/subpages/ProjectSub
 
 const RenderContentContex = createContext
 
- export const RenderContentContexProvider = ({ dashboardType, children}) => {
+ export const RenderContentProvider = ({ dashboardType, children}) => {
 
 const [activeLink, setActiveLink] = useState(dashboardType === "student" ? "learning-objectives" : "progress-tracker" )
 
