@@ -14,7 +14,7 @@ import Quiz from "../../../assets/StudentDashboard/takeTheQuiz.png";
 const NavItems = ({ activeLink, setActiveLink }) => {
   const navItems = [
     {
-      name: "learning",
+      name: "learning-Objective",
       title: "LEARNING OBJECTIVES",
       icon: lbIcon,
       activeIcon: lbActive,
@@ -26,19 +26,19 @@ const NavItems = ({ activeLink, setActiveLink }) => {
       activeIcon: InsActive,
     },
     {
-      name: "video",
+      name: "video tutorial",
       title: "VIDEO TUTORIAL",
       icon: VidIcon,
       activeIcon: VidActive,
     },
     {
-      name: "make",
+      name: "make project",
       title: "MAKE PROJECT",
       icon: MakIcon,
       activeIcon: MakActive,
     },
     {
-      name: "submit",
+      name: "submit project",
       title: "SUBMIT PROJECT",
       icon: SubIcon,
       activeIcon: SubActive,
