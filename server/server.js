@@ -3,6 +3,9 @@ require("dotenv").config()
 const cors = require("cors")
 
 const loginSignupRouter = require("./router/loginSignupRoute")
+const studentContentRouter = require("./router/StudentContentRoute")
+
+
 
 const app = express()
 
@@ -13,7 +16,7 @@ app.use(express.json())
 // use the created routes
 
 app.use('/api', loginSignupRouter)
-
+app.use("/api", studentContentRouter)
 
 // create port
 
