@@ -4,7 +4,7 @@ import NavItems from './NavItems'
 import Profile from '../../../assets/profile.png'
 import Setting from '../../../assets/settings.png'
 import Logout from '../../../assets/logout.png'
-import {useNavigate} from "react"
+import {useNavigate} from "react-router-dom"
 
 
 const SidebarWide = ({activeLink, setActiveLink, isWideSidebar}) => {

@@ -7,7 +7,7 @@ import {
 import Header from "./component/Header.jsx";
 import SidebarWide from "./sidebar/SidebarWide.jsx";
 import Sidebar from "./sidebar/Sidebar.jsx";
-import Arrow from "../../../assets/arrowLeft.png";
+import Arrow from "../../assets/arrowLeft.png";
 
 const StudentDashboardContent = () => {
   const { renderContent } = useRenderContent();
