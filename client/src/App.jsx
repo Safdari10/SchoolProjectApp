@@ -1,11 +1,14 @@
 import { Outlet } from "react-router-dom";
 import "./styles/global.css";
 import { AuthProvider } from "./contexts/AuthContext/AuthContext";
+import { FetchProvider } from "./contexts/FetchContext/FetchContext";
 
 const App = () => {
   return (
     <AuthProvider>
-      <Outlet />
+      <FetchProvider>
+        <Outlet />
+      </FetchProvider>
     </AuthProvider>
   );
 };
