@@ -4,27 +4,28 @@
 }
 
 .mainContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: max-content max-content;
     height: 95.6rem;
     background-color: #B2E4FA;
 }
 
 .sidebarContainer {
+    position: relative;
    width: fit-content;
     height: 95.6rem;
-
 }
 
 .contentContainerWide {
-    flex: content;
-    background-color: #B2E4FA;
+    width: 153rem;
+    height: 85.6rem;
+    margin: 5rem 8.3rem 5rem 3.8rem ;
+    background-color: #daf2fe;
 }
 
 .contentContainer {
     flex: content;
-    background-color: #B2E4FA;
+    background-color: #daf2fe;
 }
 
 .footerContainer {
@@ -56,8 +57,8 @@
     width: 6.4rem;
     height: 7.2rem;
     position: absolute;
-    top: 65rem;
-    left: 23rem;
+    top: 62%;
+    left: 78%;
 }
 
 .arrowContainer {
@@ -69,6 +70,6 @@
     width: 6.4rem;
     height: 7.2rem;
     position: absolute;
-    top: 70rem;
+    top: 70%;
     transform: scaleX(-1);
 }

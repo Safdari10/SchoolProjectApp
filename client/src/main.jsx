@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home/Home.jsx'
 import Login from './pages/Login-Signup/LoginSingup.jsx'
 import StudentDashboard from './pages/StudentDashboard/StudentDashboard.jsx'
+import TeacherDashboard from './pages/TeacherDashboard/TeacherDashboard.jsx'
 
 const router = createBrowserRouter([
   {
@@ -22,12 +23,14 @@ const router = createBrowserRouter([
     {
       path: "student-dashboard",
      element: <StudentDashboard/>
+    },
+    {
+      path: "teacher-dashboard",
+      element: <TeacherDashboard/>
     }
     ]
   }
 ])
-
-
 
 
 createRoot(document.getElementById('root')).render(

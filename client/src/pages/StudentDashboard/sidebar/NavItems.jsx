@@ -20,7 +20,7 @@ const NavItems = ({ activeLink, setActiveLink, isWideSidebar }) => {
 
   const navItems = [
     {
-      name: "learning-Objective",
+      name: "learning-objectives",
       title: "LEARNING OBJECTIVES",
       icon: lbIcon,
       activeIcon: lbActive,
@@ -58,7 +58,7 @@ const NavItems = ({ activeLink, setActiveLink, isWideSidebar }) => {
           key={item.name}
           className={`${styles.navItem} ${
             activeLink === item.name ? styles.active : ""
-          }  `}
+          }`}
           onClick={() => setActiveLink(item.name)}>
           <img
             src={activeLink === item.name ? item.activeIcon : item.icon}

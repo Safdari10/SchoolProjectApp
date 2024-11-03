@@ -2,7 +2,7 @@
 .sidebarWide {
     background-color: #43C0F6;
     display: grid;
-    grid-template-columns: 29rem;
+    grid-template-columns: 28rem;
     grid-template-rows: 12.6rem 68rem 15rem;
     justify-items: center;
 }
@@ -21,7 +21,7 @@
     font-family: "Open sans";
     font-weight: bold;
     font-size: 1.4rem;
-    width: 29rem;
+    width: 28rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
