@@ -7,12 +7,14 @@ const FetchContext = createContext()
 
 export const FetchProvider = ({ children }) => {
 const [data, setData] = useState(null)
-const [loading, setLoading] = useState(flase)
+const [loading, setLoading] = useState(false)
 const [error, setError] = useState(null)
 
 const fetchData = async(endPoint, id) => {
     try {
         setLoading(true)
+        setData(null)
+        setError(null)
         const url = id ? `${endPoint}/${id}` : endPoint
         const response = await fetch(url)
         
@@ -33,7 +35,7 @@ const fetchData = async(endPoint, id) => {
 
   return (
     <FetchContext.Provider value={{ data, loading, error, fetchData}} >
-      {Children}
+      {children}
     </FetchContext.Provider>
   )
 }

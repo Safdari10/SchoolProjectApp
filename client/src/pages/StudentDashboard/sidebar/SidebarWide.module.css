@@ -1,0 +1,67 @@
+
+.sidebarWide {
+    background-color: #43C0F6;
+    display: grid;
+    grid-template-columns: 29rem;
+    grid-template-rows: 12.6rem 68rem 15rem;
+    justify-items: center;
+}
+
+.profilePicContainer {
+    padding-top: 3rem;
+}
+
+.profilePic {
+    width: 7.9rem;
+    height: 7.9rem;
+}
+
+.navItem {
+    color: white;
+    font-family: "Open sans";
+    font-weight: bold;
+    font-size: 1.4rem;
+    width: 29rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.active {
+    background-color: #B2E4FA;
+    color: #707070;
+}
+
+.navIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.profileContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 8rem;
+}
+
+.settingItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.settingIcon {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.settingName {
+    font-family: "Open sans";
+    font-weight: bold;
+    color: white;
+}

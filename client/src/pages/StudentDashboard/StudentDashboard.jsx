@@ -11,7 +11,7 @@ import Arrow from "../../assets/arrowLeft.png";
 
 const StudentDashboardContent = () => {
   const { renderContent } = useRenderContent();
-  return <div className={styles.contentContainer}>{renderContent()}</div>;
+  return <div>{renderContent()}</div>;
 };
 
 const StudentDashboard = () => {
@@ -24,18 +24,32 @@ const StudentDashboard = () => {
       </header>
       <main className={styles.mainContainer}>
         <div className={styles.sidebarContainer}>
-          {isWideSidebar ? <SidebarWide isWideSidebar={isWideSidebar} /> : <Sidebar isWideSidebar={isWideSidebar} />}
+          {isWideSidebar ? (
+            <SidebarWide isWideSidebar={isWideSidebar} />
+          ) : (
+            <Sidebar isWideSidebar={isWideSidebar} />
+          )}
+          <div
+            className={
+              isWideSidebar ? styles.arrowContainerWide : styles.arrowContainer
+            }>
+            <img
+              src={Arrow}
+              alt="sidebar slider"
+              className={styles.arrow}
+              onClick={() => setIsWideSidebar(!isWideSidebar)}
+            />
           </div>
-        <div className={styles.arrowContainer}>
-          <img
-            src={Arrow}
-            alt="sidebar slider"
-            className={styles.arrow}
-            onClick={() => setIsWideSidebar(!isWideSidebar)
-            }
-          />
         </div>
-        <StudentDashboardContent />
+
+        <div
+          className={
+            isWideSidebar
+              ? styles.contentContainerWide
+              : styles.contentContainer
+          }>
+          <StudentDashboardContent />
+        </div>
       </main>
       <div className={styles.footerContainer}>
         <span className={styles.copyright}>&copy; LevelUp Works 2020</span>
