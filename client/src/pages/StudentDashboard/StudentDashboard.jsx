@@ -43,14 +43,7 @@ const StudentDashboard = () => {
               ? styles.contentContainerWide
               : styles.contentContainer
           }>
-          <div
-            className={
-              isWideSidebar
-                ? styles.contentContainerWide
-                : styles.contentContainer
-            }>
             {renderContent()}
-          </div>
         </div>
       </main>
       <div className={styles.footerContainer}>

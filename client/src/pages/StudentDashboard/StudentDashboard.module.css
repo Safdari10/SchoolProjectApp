@@ -21,11 +21,13 @@
     height: 85.6rem;
     margin: 5rem 8.3rem 5rem 3.8rem ;
     background-color: #daf2fe;
+    border-radius: 3rem;
 }
 
 .contentContainer {
     flex: content;
     background-color: #daf2fe;
+    border-radius: 3rem;
 }
 
 .footerContainer {
