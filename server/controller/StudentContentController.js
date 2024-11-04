@@ -9,6 +9,8 @@ const getLearningObjectives = async (req, res) => {
     }
 
     const result = await learningObjectivesQuery(projectId);
+    // console.log('Fetched result:', result)
+
 
     res.json(result); 
 
