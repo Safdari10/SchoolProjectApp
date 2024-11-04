@@ -1,0 +1,58 @@
+
+.sidebar {
+    background-color: #43C0F6;
+    display: grid;
+    grid-template-columns: 15rem;
+    grid-template-rows: 12.6rem 68rem 15rem;
+    justify-items: center;
+}
+
+.profilePicContainer {
+    padding-top: 3rem;
+}
+
+.profilePic {
+    width: 7.9rem;
+    height: 7.9rem;
+}
+
+.navItem {
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #B2E4FA;
+}
+
+.navIcon {
+    width: 4rem;
+    height: 4rem;
+}
+
+.profileContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.settingItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.settingIcon {
+    width: 2rem;
+    height: 2rem;
+}

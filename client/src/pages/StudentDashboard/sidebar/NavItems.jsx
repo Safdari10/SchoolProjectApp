@@ -65,7 +65,7 @@ const NavItems = ({ activeLink, setActiveLink, isWideSidebar }) => {
             alt={`${item.title} icon`}
             className={styles.navIcon}
           />
-          <span className={styles.navTitle}>{item.title}</span>
+          <span className={styles.navTitle}>{isWideSidebar ? item.title : ""}</span>
         </div>
       ))}
       <div className={styles.navItem}>
@@ -74,11 +74,11 @@ const NavItems = ({ activeLink, setActiveLink, isWideSidebar }) => {
           alt="bonus challenge icon"
           className={styles.navIcon}
         />
-        <span className={styles.navTitle}>BONUS CHALLENGE</span>
+        <span className={styles.navTitle}>{isWideSidebar ? "BONUS CHALLENGE" : ""}</span>
       </div>
       <div className={styles.navItem}>
         <img src={Quiz} alt="Quiz icon" className={styles.navIcon} />
-        <span className={styles.navTitle}>TAKE THE QUIZ</span>
+        <span className={styles.navTitle}>{isWideSidebar ? "TAKE THE QUIZ" : ""}</span>
       </div>
     </div>
   );

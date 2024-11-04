@@ -25,7 +25,11 @@
 }
 
 .contentContainer {
-    flex: content;
+    display: flex;
+    justify-content: center;
+    width: 165rem;
+    height: 85.6rem;
+    margin: 5rem 5rem 5rem 6rem ;
     background-color: #daf2fe;
     border-radius: 3rem;
 }
@@ -48,6 +52,7 @@
 .arrow {
     width: 1.8rem;
     height: 3.6rem;
+    cursor: pointer;
 }
 
 .arrowContainerWide {
@@ -72,6 +77,6 @@
     width: 6.4rem;
     height: 7.2rem;
     position: absolute;
-    top: 70%;
+    top: 73.5%;
     transform: scaleX(-1);
 }
