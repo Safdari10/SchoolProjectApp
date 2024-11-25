@@ -24,7 +24,7 @@ const loginUser = async (req, res) => {
     }
 
     // Retrieve user data from the database
-    const user = await loginQuery(email, password, userRole);
+    const user = await loginQuery(email, userRole);
     if (!user) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
