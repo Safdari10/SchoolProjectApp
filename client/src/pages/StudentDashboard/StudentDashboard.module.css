@@ -25,8 +25,6 @@
 }
 
 .contentContainer {
-    display: flex;
-    justify-content: center;
     width: 165rem;
     height: 85.6rem;
     margin: 5rem 5rem 5rem 6rem ;
