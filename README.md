@@ -1,6 +1,6 @@
-# SchoolProjectApp
+# School Project App
 
-SchoolProjectApp is a full-stack web application created as a school project to demonstrate educational project management features for students and teachers. It includes dashboards, project libraries, and profile viewers for both user types, with a modern React frontend and a Node.js/Express backend.
+School Project App is a full-stack web application created as a school project to demonstrate educational project management features for students and teachers. It includes dashboards, project libraries, and profile viewers for both user types, with a modern React frontend and a Node.js/Express backend.
 
 ## Features
 
@@ -53,8 +53,8 @@ SchoolProjectApp/
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/Safdari10/SchoolProjectApp.git
-   cd SchoolProjectApp
+   git clone https://github.com/Safdari10/schoola-project-app.git
+   cd school-project-app
    ```
 
 2. **Install dependencies:**
