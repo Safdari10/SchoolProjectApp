@@ -1,6 +1,6 @@
-# School Project App
+# School Project Portal
 
-School Project App is a full-stack web application created as a school project to demonstrate educational project management features for students and teachers. It includes dashboards, project libraries, and profile viewers for both user types, with a modern React frontend and a Node.js/Express backend.
+School Project Portal is a full-stack web application created as a school project to demonstrate educational project management features for students and teachers. It includes dashboards, project libraries, and profile viewers for both user types, with a modern React frontend and a Node.js/Express backend.
 
 ## Features
 
